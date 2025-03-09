@@ -1,14 +1,39 @@
 import { Link } from "react-router-dom";
 import Logo from "../images/logo/logo.png";
-import { useState } from "react";
+import { use, useState } from "react";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../../firebase";
+import {useAuthState} from 'react-firebase-hooks/auth'
 
 function Navbar() {
   const [nav, setNav] = useState(false);
+  const[active,setActive] =useState(null)
 
   const openNav = () => {
     setNav(!nav);
   };
 
+  const fetchUser =async ()=>{
+    await onAuthStateChanged(auth ,(user)=>{
+      if(user){
+        setActive(true)
+      }
+      else{
+        setActive(false)
+      }
+    })
+  }
+  fetchUser()
+  const [user] =useAuthState(auth)
+  const logOut = async()=>{
+    try {
+      await signOut(auth)
+      setActive(false)
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
   return (
     <>
       <nav>
@@ -54,6 +79,7 @@ function Navbar() {
         {/* desktop */}
 
         <div className="navbar">
+
           <div className="navbar__img">
             <Link to="/" onClick={() => window.scrollTo(0, 0)}>
               <img src={Logo} alt="logo-img" />
@@ -96,14 +122,19 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          <div className="navbar__buttons">
-            <Link className="navbar__buttons__sign-in" to="/">
+          {!active? <div className="navbar__buttons">
+            <Link className="navbar__buttons__sign-in" to="/signin">
               Sign In
             </Link>
-            <Link className="navbar__buttons__register" to="/">
+            <Link className="navbar__buttons__register" to="/register">
               Register
             </Link>
-          </div>
+          </div> : <div className="navbar__buttons"> 
+          <Link className="navbar__buttons__register" onClick={logOut}>
+              Logout
+            </Link>
+          </div>}
+          
 
           {/* mobile */}
           <div className="mobile-hamb" onClick={openNav}>

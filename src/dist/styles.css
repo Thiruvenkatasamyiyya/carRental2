@@ -2078,3 +2078,36 @@ footer {
   box-shadow: 0 10px 15px 0 rgba(255, 83, 48, 0.6);
   background-color: #fa4226;
 }/*# sourceMappingURL=styles.css.map */
+
+
+/* add style for signin page */
+
+.funsignin{
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+ 
+}
+.funsignin h1{
+  font-size: 50px;
+  margin: 20px 0px;
+}
+.funsign-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.funsigninbtn{
+
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+.funsignin a{
+  text-decoration: none;
+  font-size: 15px;
+} 

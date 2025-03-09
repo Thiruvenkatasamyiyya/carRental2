@@ -7,6 +7,8 @@ import Models from "./Pages/Models";
 import TestimonialsPage from "./Pages/TestimonialsPage";
 import Team from "./Pages/Team";
 import Contact from "./Pages/Contact";
+import Signin from "./auth/Signin";
+import Register from "./auth/Register";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="testimonials" element={<TestimonialsPage />} />
         <Route path="team" element={<Team />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="signin" element ={<Signin/>}/>
+        <Route path="register" element ={<Register/>}/>
       </Routes>
     </>
   );
