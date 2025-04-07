@@ -7,19 +7,27 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "backdev": "nodemon backend/app.js"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.0.12",
     "@tailwindcss/postcss": "^4.0.12",
-    "@tailwindcss/vite": "^4.0.12",
+    "@tailwindcss/vite": "^4.0.14",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
     "firebase": "^11.4.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.12.1",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-firebase-hooks": "^5.1.1",
     "react-router-dom": "^7.3.0",
-    "tailwindcss": "^4.0.12"
+    "tailwindcss": "^4.0.14"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

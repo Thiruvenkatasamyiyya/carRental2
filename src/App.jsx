@@ -9,6 +9,7 @@ import Team from "./Pages/Team";
 import Contact from "./Pages/Contact";
 import Signin from "./auth/Signin";
 import Register from "./auth/Register";
+import './index.css';
 
 function App() {
   return (

@@ -3,6 +3,7 @@ import React, { use, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { auth } from '../../firebase'
 import UserStatus from './UserStatus'
+import '../index.css'
 
 
 
@@ -19,6 +20,7 @@ const Signin = () => {
   const[email,setEmail] = useState('')
   const[password,setPassword] = useState('')
   const [error,setError] = useState('')
+  const [userId,setUserId]= useState('')
   const navigate = useNavigate()
 
   const handleSignin = async (e)=>{
@@ -26,7 +28,9 @@ const Signin = () => {
 
     try {
       await signInWithEmailAndPassword(auth,email,password)
+      // setUserId(awai)
       navigate('/')
+      
 
     } catch (err) {
       setError(errorMessages[err.code])
@@ -49,8 +53,9 @@ const handleRegister = ()=>{
 
 
   return (
-    <div className='funsignin'>
-        <h1>Welcome back Cheif</h1>
+    <div className='min-h-screen flex justify-center'>
+        <div className='funsignin container'>
+        <h1 className="text-3xl font-bold underline">Welcome back Cheif</h1>
         <form action="" onSubmit={handleSignin}>
         <div className='funsign-wrapper'>
         <label htmlFor="" style={{fontSize : '16px'}}>Email address</label>
@@ -65,6 +70,7 @@ const handleRegister = ()=>{
         </div>
         </form>
         <a href=""onClick={handleRegister}>Create an Account</a>
+    </div>
     </div>
   )
 }

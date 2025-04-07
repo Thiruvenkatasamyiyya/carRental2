@@ -9,6 +9,7 @@ const UserStatus = () => {
         onAuthStateChanged(auth,(user)=>{
             if(user){
                 setActive(true)
+                
             }
             else{
                 setActive(false)

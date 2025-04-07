@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-  max-width: 133rem !important;
+  max-width: 233rem !important;
   margin: 0 auto !important;
   padding: 0 2.5rem !important;
 }
@@ -2082,7 +2082,7 @@ footer {
 
 /* add style for signin page */
 
-.funsignin{
+/* .funsignin{
   min-height: 600px;
   display: flex;
   flex-direction: column;
@@ -2090,11 +2090,11 @@ footer {
   align-items: center;
   gap: 10px;
  
-}
-.funsignin h1{
+} */
+/* .funsignin h1{
   font-size: 50px;
   margin: 20px 0px;
-}
+} */
 .funsign-wrapper{
   display: flex;
   flex-direction: column;

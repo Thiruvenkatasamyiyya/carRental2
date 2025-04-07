@@ -8,6 +8,7 @@ import {useAuthState} from 'react-firebase-hooks/auth'
 function Navbar() {
   const [nav, setNav] = useState(false);
   const[active,setActive] =useState(null)
+  const [ userId, setUserId]= useState(null)
 
   const openNav = () => {
     setNav(!nav);
@@ -16,7 +17,10 @@ function Navbar() {
   const fetchUser =async ()=>{
     await onAuthStateChanged(auth ,(user)=>{
       if(user){
+        const userid = user.uid
         setActive(true)
+        setUserId(userid)
+        console.log(userId);
       }
       else{
         setActive(false)
